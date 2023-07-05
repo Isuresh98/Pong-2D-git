@@ -9,6 +9,8 @@ public class Leaderboard : MonoBehaviour
     int leaderboardID = 15621;
     public TextMeshProUGUI playerNames;
     public TextMeshProUGUI playerScores;
+    public TextMeshProUGUI playerNames2;
+    public TextMeshProUGUI playerScores2;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,7 +65,9 @@ public class Leaderboard : MonoBehaviour
                 }
                 done = true;
                 playerNames.text = tempPlayerNames;
+                playerNames2.text = tempPlayerNames;
                 playerScores.text = tempPlayerScores;
+                playerScores2.text = tempPlayerScores;
             }
             else
             {

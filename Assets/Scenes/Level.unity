@@ -39658,6 +39658,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNames: {fileID: 1014583176}
   playerScores: {fileID: 541360982}
+  playerNames2: {fileID: 1739972452}
+  playerScores2: {fileID: 1376349170}
 --- !u!222 &8595366282738206673
 CanvasRenderer:
   m_ObjectHideFlags: 0
