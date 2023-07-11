@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     private const string NameInputFlagKey = "NameInputFlag";
     public GameObject PowerUppannel;
     private int playerScore;
-    private int playerHealth = 3;
+    private int playerHealth = 1;
     public int scoreLimitInGemget;
     public int scoreLimitInGemgetCount;
     private bool isSubmittingScores = false;
@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
     private const string NameInputFlagKey2 = "NameInputFlag";
     public GameObject PowerUppannel2;
     private int playerScore2;
-    private int playerHealth2 = 3;
+    private int playerHealth2 = 1;
     public int scoreLimitInGemget2;
     public int scoreLimitInGemgetCount2;
     private bool isSubmittingScores2 = false;
@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         scoreLimitInGemgetCount = 0;
-        playerHealth = 3;
+        playerHealth = 1;
         UpdateScoreText();
         UpdateHealthText();
         gemsmanager = FindObjectOfType<GemsManager>();
@@ -259,7 +259,7 @@ public class GameManager : MonoBehaviour
     private void ContinueGame()
     {
         // Reset the player's health and score
-        playerHealth = 3;
+        playerHealth = 1;
         UpdateHealthText();
         UpdateScoreText();
         Time.timeScale = 1;
@@ -379,7 +379,7 @@ public class GameManager : MonoBehaviour
         leaderboardPanel.SetActive(false);
         PowerUppannel.SetActive(false);
         scoreOverPanel.SetActive(false);
-        playerHealth = 3;
+        playerHealth = 1;
         playerScore = 0;
         UpdateHealthText();
         UpdateScoreText();
@@ -391,7 +391,7 @@ public class GameManager : MonoBehaviour
         leaderboardPanel2.SetActive(false);
         PowerUppannel2.SetActive(false);
         scoreOverPanel2.SetActive(false);
-        playerHealth2 = 3;
+        playerHealth2 = 1;
         playerScore2 = 0;
         StartBTPanel2.SetActive(true);
         scoreLimitInGemgetCount2 = 0;
@@ -404,7 +404,7 @@ public class GameManager : MonoBehaviour
         leaderboardPanel.SetActive(false);
         PowerUppannel.SetActive(false);
         StartBTPanel.SetActive(false);
-        playerHealth = 3;
+        playerHealth = 1;
         playerScore = 0;
         UpdateHealthText();
         UpdateScoreText();
@@ -418,7 +418,7 @@ public class GameManager : MonoBehaviour
         leaderboardPanel2.SetActive(false);
         PowerUppannel2.SetActive(false);
         StartBTPanel2.SetActive(false);
-        playerHealth2 = 3;
+        playerHealth2 = 1;
         playerScore2 = 0;
     }
     public void restarBT()

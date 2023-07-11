@@ -6,13 +6,12 @@ using UnityEngine.Purchasing;
 public class IAP_Manager : MonoBehaviour
 {
     private string gem80 ="80gem";
-    private string gem100 ="100gem";
-    private string gem200 ="200gem";
-    private string gem300 ="300gem";
     private string gem500 ="500gem";
-    private string gem750 ="750gem";
-    private string gem1k ="1kgem";
-    private string gem2k ="2kgem";
+    private string gem1200 ="1200gem";
+    private string gem2500 ="2500gem";
+    private string gem6500 ="6500gem";
+    private string gem14000 ="14000gem";
+
     private GemsManager gemsmanager;
 
 
@@ -30,27 +29,6 @@ public class IAP_Manager : MonoBehaviour
             gemsmanager.AddGems(80);
 
         }
-        if (product.definition.id == gem100)
-        {
-            //reword player gem
-            Debug.Log("get the 100 gems");
-            gemsmanager.AddGems(100);
-
-        }
-        if (product.definition.id == gem200)
-        {
-            //reword player gem
-            Debug.Log("get the 200 gems");
-            gemsmanager.AddGems(200);
-
-        }
-        if (product.definition.id == gem300)
-        {
-            //reword player gem
-            Debug.Log("get the 300 gems");
-            gemsmanager.AddGems(300);
-
-        }
         if (product.definition.id == gem500)
         {
             //reword player gem
@@ -58,27 +36,35 @@ public class IAP_Manager : MonoBehaviour
             gemsmanager.AddGems(500);
 
         }
-        if (product.definition.id == gem750)
+        if (product.definition.id == gem1200)
         {
             //reword player gem
-            Debug.Log("get the 750 gems");
-            gemsmanager.AddGems(750);
+            Debug.Log("get the 1200 gems");
+            gemsmanager.AddGems(1200);
 
         }
-        if (product.definition.id == gem1k)
+        if (product.definition.id == gem2500)
         {
             //reword player gem
-            Debug.Log("get the 1k gems");
-            gemsmanager.AddGems(1000);
+            Debug.Log("get the 2500 gems");
+            gemsmanager.AddGems(2500);
 
         }
-        if (product.definition.id == gem2k)
+        if (product.definition.id == gem6500)
         {
             //reword player gem
-            Debug.Log("get the 2k gems");
-            gemsmanager.AddGems(2000);
+            Debug.Log("get the 6500 gems");
+            gemsmanager.AddGems(6500);
 
         }
+        if (product.definition.id == gem14000)
+        {
+            //reword player gem
+            Debug.Log("get the 14000 gems");
+            gemsmanager.AddGems(14000);
+
+        }
+       
     }
    
     public void OnPurchaseFailed(Product product,PurchaseFailureReason failureReason)
