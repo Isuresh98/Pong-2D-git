@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public float timerDuration = 10f; // Duration of the timer in seconds
     private float remainingTime; // Remaining time on the timer
 
-  
+    public Button PowerUpOnScreen;
 
     #region Portrait Mode Variables
     [Header("Potratemode")]
@@ -149,6 +149,7 @@ public class GameManager : MonoBehaviour
         leaderboardButton.onClick.AddListener(OpenLeaderboard);
         leaderboardCloseButton.onClick.AddListener(CloseLeaderboard);
         powerUpButton.onClick.AddListener(powerUp);
+        PowerUpOnScreen.onClick.AddListener(powerUp);
         powerUpButtonClose.onClick.AddListener(powerUpClose);
         ScoreGameoverButtonClose.onClick.AddListener(gameoverCloeBT);
         StartBT.onClick.AddListener(StartBTGamePlayer);
@@ -185,6 +186,8 @@ public class GameManager : MonoBehaviour
             // For example, call a method or trigger an event
             PerformAction();
         }
+
+      
     }
     private void PerformAction()
     {
@@ -236,6 +239,7 @@ public class GameManager : MonoBehaviour
         if (playerHealth <= 0)
         {
             EndGame();
+        
         }
     }
 
@@ -297,8 +301,8 @@ public class GameManager : MonoBehaviour
         // Upload the scores one by one
 
         // Send the score value to the ScoreSaveBoard script
-        scoreSaveBoard.AddScoreEntry(scoresToUpload.Count, playerScore);
-        scoreSaveBoard2.AddScoreEntry(scoresToUpload2.Count, playerScore);
+       /* scoreSaveBoard.AddScoreEntry(scoresToUpload.Count, playerScore);
+        scoreSaveBoard2.AddScoreEntry(scoresToUpload2.Count, playerScore);*/
         StartCoroutine(ledarboard.SubmitScoreRoutine(playerScore));
         StartCoroutine(ledarboard2.SubmitScoreRoutine(playerScore));
     }
@@ -312,10 +316,21 @@ public class GameManager : MonoBehaviour
         gameEndPanel.SetActive(false);
         PowerUppannel2.SetActive(true);
         gameEndPanel2.SetActive(false);
+        Time.timeScale = 0;
         // powerUpButton.gameObject.SetActive(false); // Activate the power-up button after the timer elapses 
 
     }
-
+    private void powerUpClose()
+    {
+        PowerUppannel.SetActive(false);
+        gameEndPanel.SetActive(true);
+        PowerUppannel2.SetActive(false);
+        gameEndPanel2.SetActive(true);
+        Time.timeScale = 1;
+        // Hide the game over panel
+        gameEndPanel.SetActive(false);
+        gameEndPanel2.SetActive(false);
+    }
 
     private void gemPannelOpen()
     {
@@ -335,14 +350,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    private void powerUpClose()
-    {
-        PowerUppannel.SetActive(false);
-        gameEndPanel.SetActive(true);
-        PowerUppannel2.SetActive(false);
-        gameEndPanel2.SetActive(true);
-
-    }
+    
     private void OpenLeaderboard()
     {
         leaderboardPanel.SetActive(true);

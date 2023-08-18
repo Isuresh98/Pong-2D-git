@@ -14,6 +14,8 @@ public class PlayerManager : MonoBehaviour
     {
         StartCoroutine(SetupRoutine());
     }
+   
+
 
     public void SetPlayerName()
     {
@@ -59,6 +61,6 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }

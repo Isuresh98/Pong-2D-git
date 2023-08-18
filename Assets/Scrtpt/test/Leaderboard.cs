@@ -11,12 +11,44 @@ public class Leaderboard : MonoBehaviour
     public TextMeshProUGUI playerScores;
     public TextMeshProUGUI playerNames2;
     public TextMeshProUGUI playerScores2;
+
+
+    private Coroutine leaderboardUpdateCoroutine;
+
+
     // Start is called before the first frame update
     void Start()
     {
-
+        // Start the coroutine to update the leaderboard data in real-time
+        leaderboardUpdateCoroutine = StartCoroutine(RealTimeLeaderboardUpdateRoutine());
     }
 
+
+    // Coroutine to fetch and update leaderboard data in real-time
+    private IEnumerator RealTimeLeaderboardUpdateRoutine()
+    {
+        WaitForSeconds waitTime = new WaitForSeconds(30f); // Fetch every 30 seconds (adjust as needed)
+
+        while (true)
+        {
+            yield return FetchTopHighscoresRoutine(); // Fetch the latest leaderboard data
+            yield return waitTime; // Wait for the specified interval
+        }
+    }
+
+
+
+
+
+
+    // Stop the real-time update coroutine when the script is disabled
+    private void OnDisable()
+    {
+        if (leaderboardUpdateCoroutine != null)
+        {
+            StopCoroutine(leaderboardUpdateCoroutine);
+        }
+    }
     public IEnumerator SubmitScoreRoutine(int scoreToUpload)
     {
         bool done = false;

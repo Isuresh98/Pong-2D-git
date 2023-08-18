@@ -17,7 +17,7 @@ public class Paddle : MonoBehaviour
 
     private void Update()
     {
-        if (isBeingTouched)
+        if (Time.timeScale > 0 && isBeingTouched)
         {
             if (Input.touchCount > 0)
             {
