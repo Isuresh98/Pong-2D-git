@@ -6418,6 +6418,7 @@ MonoBehaviour:
   gemsCountText: {fileID: 1031842700}
   gemsCountText2: {fileID: 611374696}
   paddleCountText: {fileID: 1613622893}
+  currentTime: 0
 --- !u!4 &439839701
 Transform:
   m_ObjectHideFlags: 0
@@ -21571,8 +21572,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Startspeed: 5
-  Extraspeed: 1
-  MaxExtraspeed: 5
+  Extraspeed: 2
+  MaxExtraspeed: 10
   playerStart: 1
 --- !u!114 &1235765436
 MonoBehaviour:

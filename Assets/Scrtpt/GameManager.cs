@@ -457,20 +457,23 @@ public class GameManager : MonoBehaviour
     //Game stop Contraller
     private void ToggleGamePause()
     {
-        isGamePaused = !isGamePaused;
+        EndGame();
+       /* isGamePaused = !isGamePaused;
 
         if (isGamePaused)
         {
             PauseGame();
             // Change the image to the paused state image
             stopButtonImage.sprite = pausedStateSprite;
+            //.......................................................................................................
+          
         }
         else
         {
             ResumeGame();
             // Change the image to the resumed state image
             stopButtonImage.sprite = resumedStateSprite;
-        }
+        }*/
     }
 
 
