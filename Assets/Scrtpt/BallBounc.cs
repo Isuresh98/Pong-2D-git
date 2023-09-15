@@ -63,8 +63,8 @@ public class BallBounc : MonoBehaviour
             ball.playerStart = false;
             StartCoroutine(ball.Lauch());
             gameManager.DecrementHealth(1);
-           // gemsmanager.ResetBallScale();
-           // gemsmanager.ResetWidePaddle();
+            gemsmanager.ResetBallScale();
+            gemsmanager.ResetWidePaddle();
         }
     }
     private void Update()
