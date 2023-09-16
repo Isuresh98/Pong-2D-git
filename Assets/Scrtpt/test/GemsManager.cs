@@ -20,7 +20,7 @@ public class GemsManager : MonoBehaviour
     private bool isBallScaled = false;
     private bool isWidePaddle = false;
     private Vector3 originalPaddleScale;
-
+    public float currentTime = 0f; // Current time in seconds
 
     private void Start()
     {
@@ -37,6 +37,31 @@ public class GemsManager : MonoBehaviour
        
     }
 
+
+    private void Update()
+    {
+        // Update timer only when it's greater than 0
+        if (currentTime > 0)
+        {
+            currentTime -= Time.deltaTime;
+           
+
+            // Check if timer has reached 0
+            if (currentTime <= 0)
+            {
+                ResetBallScale();
+                ResetWidePaddle();
+            }
+        }
+
+
+    }
+    public void SetTimer(float seconds)
+    {
+        currentTime = seconds;
+       
+    }
+
     public void BuyGemsToBall()
     {
         
@@ -48,6 +73,7 @@ public class GemsManager : MonoBehaviour
             Debug.Log("Ball scaled up successfully!");
             gameManager.StartCoroutine(gameManager.StartTimer());
             gameManager.powerUpButton.gameObject.SetActive(false);
+            SetTimer(30f);
         }
        
         else
@@ -67,7 +93,7 @@ public class GemsManager : MonoBehaviour
             Debug.Log("Paddle width increased successfully!");
             gameManager.StartCoroutine(gameManager.StartTimer());
             gameManager.powerUpButton.gameObject.SetActive(false);
-
+            SetTimer(30f);
 
         }
         else
